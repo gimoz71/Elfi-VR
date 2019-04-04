@@ -8,26 +8,31 @@ ModelImporter:
     100004: Cube_001
     100006: Altare
     100008: Caverna
+    100010: pCylinder1
     400000: //RootNode
     400002: Cube
     400004: Cube_001
     400006: Altare
     400008: Caverna
+    400010: pCylinder1
     2100000: Material
     2300000: //RootNode
     2300002: Cube
     2300004: Cube_001
     2300006: Altare
     2300008: Caverna
+    2300010: pCylinder1
     3300000: //RootNode
     3300002: Cube
     3300004: Cube_001
     3300006: Altare
     3300008: Caverna
+    3300010: pCylinder1
     4300000: Cube
     4300002: Cube_001
     4300004: Altare
     4300006: Caverna
+    4300008: pCylinder1
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
