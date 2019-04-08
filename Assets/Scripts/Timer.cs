@@ -51,9 +51,13 @@ public class Timer : MonoBehaviour
             {
                 yield return null;
             }
-            yield return new WaitForSeconds(1);
-            duration--;
-            countDown.text = "" + duration;
+            while (!isPaused)
+            {
+                yield return new WaitForSeconds(1);
+                duration--;
+                countDown.text = "" + duration;
+            }
+          
             
             
         }
