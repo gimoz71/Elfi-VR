@@ -6042,6 +6042,7 @@ GameObject:
   - component: {fileID: 1977025059}
   - component: {fileID: 1977025061}
   - component: {fileID: 1977025062}
+  - component: {fileID: 1977025065}
   m_Layer: 0
   m_Name: Piccone
   m_TagString: Untagged
@@ -6242,6 +6243,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300008, guid: f06c7f9b24c7f4a449a5ff58a1ea1cee, type: 3}
+--- !u!114 &1977025065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977025056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d4cc6cf300b3e4bb1411c4e041030c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportAllowed: 1
+  overrideHoverLock: 1
 --- !u!1 &1995414458
 GameObject:
   m_ObjectHideFlags: 0
