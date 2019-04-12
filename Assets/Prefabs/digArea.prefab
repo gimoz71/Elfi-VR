@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1897266930439626628}
   - component: {fileID: 7029189145785052700}
   - component: {fileID: 1472919138555915794}
+  - component: {fileID: 5912695844541566273}
   m_Layer: 0
   m_Name: item
   m_TagString: itemChild
@@ -208,6 +209,20 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!114 &5912695844541566273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119942403221526134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d4cc6cf300b3e4bb1411c4e041030c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportAllowed: 1
+  overrideHoverLock: 1
 --- !u!1 &3040906267227992523
 GameObject:
   m_ObjectHideFlags: 0
