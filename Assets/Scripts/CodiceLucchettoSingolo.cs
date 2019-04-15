@@ -20,18 +20,24 @@ public class CodiceLucchettoSingolo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void AddValue()
     {
-        number++;
-        counter.text = number.ToString();
+        if (number < 9)
+        {
+            number++;
+            counter.text = number.ToString();
+        }
     }
 
     public void RemoveValue()
     {
-        number--;
-        counter.text = number.ToString();
+        if (number > 0)
+        {
+            number--;
+            counter.text = number.ToString();
+        }
     }
 }
