@@ -26,12 +26,12 @@ public class PartCollision : MonoBehaviour
 
         while (i < numCollisionEvents)
         {
-            Debug.Log(i);
-            if (other.name == "HeadCollider")
+            //Debug.Log(i);
+            if (other == player)
             {
                 
                 Debug.Log("COLLISION!!!");
-            } else if (other.name == "sword")
+            } else if (other == sword)
             {
                 Debug.Log("KILL PARTICLE!!!!!");
             }
