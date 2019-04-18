@@ -7,7 +7,7 @@ using models;
 
 public class ButtonArray : MonoBehaviour
 {
-    public GameObject canvasParent;
+    public GameObject AnswerParent;
     public GameObject buttonPrefab;
     public TextMeshProUGUI question;
 
@@ -20,9 +20,7 @@ public class ButtonArray : MonoBehaviour
         var configManager = JSonConfigManager.Instance;
         configManager.OpenConfigFile(JSonConfigManager.ConfigFilePath);
         domande = configManager.getDomandeSessione();
-
-        //var combinazioneLucchetto = configManager.getCombinazioneLucchetto();
-
+        
         InitQuestion();
     }
 
@@ -34,7 +32,7 @@ public class ButtonArray : MonoBehaviour
         foreach (var risposta in domanda.risposte) {
             GameObject answer = Instantiate(buttonPrefab);
             answer.name = "answer-" + answerNumber; 
-            answer.transform.SetParent(canvasParent.transform, false);
+            answer.transform.SetParent(AnswerParent.transform, false);
             Button tempButton = answer.GetComponent<Button>();
             answer.GetComponentInChildren<Text>().text = risposta.testo;
             tempButton.onClick.AddListener(() => ButtonClicked(risposta.id, domanda.idDomanda));

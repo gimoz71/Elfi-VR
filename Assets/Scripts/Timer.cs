@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
     {
         countDownPanel = GameObject.Find("[COUNTDOWN]");
         isPaused = true;
-        startStopText.text = "start";
+        startStopText.text = "Timer start";
         StartTimer();
     }
 
@@ -78,11 +78,11 @@ public class Timer : MonoBehaviour
     {
         if(isPaused == true)
         {
-            startStopText.text = "pause";
+            startStopText.text = "Timer pause";
             isPaused = false;
         } else
         {
-            startStopText.text = "start";
+            startStopText.text = "Timer start";
             isPaused = true;
         }
             

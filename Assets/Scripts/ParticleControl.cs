@@ -23,13 +23,13 @@ public class ParticleControl : MonoBehaviour
         if(pSystem.isPaused == true || pSystem.isStopped == true)
         {
             pSystem.Play();
-            controlParticle.text = "Pause";
+            controlParticle.text = "Ghost stop";
         } else
         {
             //pSystem.Pause();
             pSystem.Stop();
             pSystem.Clear();
-            controlParticle.text = "Play";
+            controlParticle.text = "Ghost play";
         }
     }
 }
