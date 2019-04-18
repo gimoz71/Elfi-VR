@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 [ExecuteInEditMode]
 public class PartCollision : MonoBehaviour
 {
@@ -29,7 +29,7 @@ public class PartCollision : MonoBehaviour
             //Debug.Log(i);
             if (other == player)
             {
-                
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 Debug.Log("COLLISION!!!");
             } else if (other == sword)
             {

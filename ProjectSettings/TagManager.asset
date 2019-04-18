@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - ScoreStore
   - itemChild
+  - pit
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - external
   - PP
   - Teleport
-  - 
+  - totem
   - 
   - 
   - 

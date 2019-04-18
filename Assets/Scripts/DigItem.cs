@@ -9,8 +9,10 @@ public class DigItem : MonoBehaviour
     private GameObject itemChild;
     private GameObject markerChild;
     private MeshRenderer itemChildRenderer;
-    public ParticleSystem picconata;
     private int picconataCounter;
+
+    public ParticleSystem scintille;
+    public Texture symbolTexture;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,9 @@ public class DigItem : MonoBehaviour
         itemChild = transform.Find("item").gameObject;
         markerChild = transform.Find("marker").gameObject;
 
-        picconata.GetComponent<ParticleSystem>().Stop();
+        scintille.GetComponent<ParticleSystem>().Stop();
+
+        itemChild.GetComponent<Renderer>().material.mainTexture = symbolTexture;
     }
 
     // Update is called once per frame
@@ -45,7 +49,7 @@ public class DigItem : MonoBehaviour
 
     void Explode()
     {
-        
-        picconata.GetComponent<ParticleSystem>().Play();
+
+        scintille.GetComponent<ParticleSystem>().Play();
     }
 }

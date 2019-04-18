@@ -51,19 +51,19 @@ public class Timer : MonoBehaviour
             {
                 yield return null;
             }
-            while (!isPaused)
+            
+            yield return new WaitForSeconds(1);
+            duration--;
+            countDown.text = "" + duration;
+
+            while (isPaused)
             {
-                yield return new WaitForSeconds(1);
-                duration--;
-                countDown.text = "" + duration;
+                yield return null;
             }
-          
-            
-            
         }
         //yield return new WaitForSeconds(myDelay);
         //yield return StartCoroutine(sequenzaLancio(myQuantity, myInterval));
-        SceneManager.LoadScene("Scena 1 A");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
  
