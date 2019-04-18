@@ -18,7 +18,14 @@ public class ButtonArray : MonoBehaviour
     private void Start()
     {
         var configManager = JSonConfigManager.Instance;
-        configManager.OpenConfigFile(JSonConfigManager.ConfigFilePath);
+        if (SceneChanger.team == 1)
+        {
+            configManager.OpenConfigFile(JSonConfigManager.ConfigFilePathA);
+        }
+        if (SceneChanger.team == 2)
+        {
+            configManager.OpenConfigFile(JSonConfigManager.ConfigFilePathB);
+        }
         domande = configManager.getDomandeSessione();
         
         InitQuestion();

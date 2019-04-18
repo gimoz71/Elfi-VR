@@ -22,7 +22,14 @@ public class CheckCodiceLucchetto : MonoBehaviour
     void Start()
     {
         var configManager = JSonConfigManager.Instance;
-        configManager.OpenConfigFile(JSonConfigManager.ConfigFilePath);
+        if (SceneChanger.team == 1)
+        {
+            configManager.OpenConfigFile(JSonConfigManager.ConfigFilePathA);
+        }
+        if (SceneChanger.team == 2)
+        {
+            configManager.OpenConfigFile(JSonConfigManager.ConfigFilePathB);
+        }
         codice = configManager.getCombinazioneLucchetto();
         treasureAnimation = treasure.GetComponent<Animation>();
         //codice = "12345";

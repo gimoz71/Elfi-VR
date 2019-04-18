@@ -9,11 +9,14 @@ using System.Collections;
 public class JSonConfigManager
 {
 
-    public static string ConfigFilePath = "E:/elficonfig/config.json";
+    public static string ConfigFilePathA = "E:/elficonfig/squadraA.json";
+    public static string ConfigFilePathB = "E:/elficonfig/squadraB.json";
 
     public string FileText { get; set; }
     private static JSonConfigManager instance = null;
     ConfigModel model = new ConfigModel();
+
+    
 
     public static JSonConfigManager Instance {
         get {
