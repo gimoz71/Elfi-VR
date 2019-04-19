@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetSceneOnStart : MonoBehaviour
 {
-
+    public Text sceneTitle;
     public GameObject scene1;
     public GameObject scene2;
     public GameObject scene3;
@@ -17,11 +18,13 @@ public class SetSceneOnStart : MonoBehaviour
     {
         Debug.Log("TEAM: " + SceneChanger.team + "SCENA: " + SceneChanger.scene);
 
-        // SCENA
+        sceneTitle = GameObject.Find("Scene Title").GetComponent<Text>();
 
-        if (SceneChanger.scene == 1) // DIG
+        // Scena 1 - Scavo
+        if (SceneChanger.scene == 1)
         {
             scene1.SetActive(true);
+            sceneTitle.text = "Scena 1";
 
             if (SceneChanger.team == 1)
             {
@@ -35,9 +38,12 @@ public class SetSceneOnStart : MonoBehaviour
 
         }
 
-        if (SceneChanger.scene == 2) // TANGRAM
+        // Scena 2 - Tangram
+        if (SceneChanger.scene == 2)
         {
             scene2.SetActive(true);
+            sceneTitle.text = "Scena 2";
+
 
             if (SceneChanger.team == 1)
             {
@@ -52,22 +58,56 @@ public class SetSceneOnStart : MonoBehaviour
 
         }
 
+        // Scena 3 - Ghost lucchetto
         if (SceneChanger.scene == 3)
         {
+
             scene3.SetActive(true);
+            sceneTitle.text = "Scena 3";
+
+            GameObject ghostButton = GameObject.Find("Ghost");
+            ghostButton.SetActive(true);
+
+
+        } else {
+            GameObject ghostButton = GameObject.Find("Ghost");
+            ghostButton.SetActive(false);
         }
+
+        // Scena 4 - Entità domande
         if (SceneChanger.scene == 4)
         {
             scene4.SetActive(true);
+            sceneTitle.text = "Scena 4";
+
         }
+
+        // Scena 5 - Descrizione oggetti
         if (SceneChanger.scene == 5)
         {
             scene5.SetActive(true);
+            sceneTitle.text = "Scena 5";
+
         }
+
+        // Scena 6 - Enigma finale
         if (SceneChanger.scene == 6)
         {
             scene6.SetActive(true);
-        }
+            sceneTitle.text = "Scena 6";
+
+
+            if (SceneChanger.team == 1)
+            {
+                GameObject lettereSimboli = GameObject.Find("BrickA");
+                lettereSimboli.SetActive(false);
+            }
+            else
+            {
+                GameObject lettereSimboli = GameObject.Find("BrickB");
+                lettereSimboli.SetActive(false);
+            }
+        } 
         
 
 

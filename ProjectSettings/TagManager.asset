@@ -9,6 +9,8 @@ TagManager:
   - ScoreStore
   - itemChild
   - pit
+  - subMenu
+  - mainMenu
   layers:
   - Default
   - TransparentFX
