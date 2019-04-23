@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CheckCodiceLucchetto : MonoBehaviour
 {
 
-    public Text codice1;
-    public Text codice2;
-    public Text codice3;
-    public Text codice4;
-    public Text codice5;
+    public TextMeshPro codice1;
+    public TextMeshPro codice2;
+    public TextMeshPro codice3;
+    public TextMeshPro codice4;
+    public TextMeshPro codice5;
 
     private string codice;
 
@@ -18,9 +19,15 @@ public class CheckCodiceLucchetto : MonoBehaviour
     private Animation treasureAnimation;
     public Text risultato;
 
+
+    private AudioSource eventSound;
+    public AudioClip errorSound;
+    public AudioClip successSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        eventSound = GetComponent<AudioSource>();
         var configManager = JSonConfigManager.Instance;
         if (SceneChanger.team == 1)
         {
@@ -49,10 +56,16 @@ public class CheckCodiceLucchetto : MonoBehaviour
             Debug.Log("BRAVO!!!!!!!!");
             risultato.text = risultato.text + " OK!";
             treasureAnimation.Play();
+            GameObject pannelloLucchetto = GameObject.Find("Panello Codice");
+            Collider chiave = GameObject.Find("chiave").GetComponent<Collider>();
+            pannelloLucchetto.SetActive(false);
+            chiave.enabled = false;
+            eventSound.PlayOneShot(successSound, 1f);
         } else
         {
             Debug.Log("ERRORE!!");
             risultato.text = risultato.text + " NO!!!";
+            eventSound.PlayOneShot(errorSound, 1f);
         }
     }
 }

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CodiceLucchettoSingolo : MonoBehaviour
 {
 
     public Button addNum;
     public Button removeNum;
-    public Text counter;
+    //public Text counter;
+    public TextMeshPro counter;
     private int number;
 
     // Start is called before the first frame update

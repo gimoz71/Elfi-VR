@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+
+
 [ExecuteInEditMode]
 public class PartCollision : MonoBehaviour
 {
@@ -10,11 +12,13 @@ public class PartCollision : MonoBehaviour
 
     public GameObject sword;
     public GameObject player;
+    public AudioSource particleDeath;
 
     void Start()
     {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
+        particleDeath = GetComponent<AudioSource>();
     }
 
     void OnParticleCollision(GameObject other)
@@ -34,6 +38,7 @@ public class PartCollision : MonoBehaviour
             } else if (other == sword)
             {
                 Debug.Log("KILL PARTICLE!!!!!");
+                particleDeath.Play();
             }
             i++;
         }

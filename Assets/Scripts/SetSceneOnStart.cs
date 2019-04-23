@@ -14,9 +14,30 @@ public class SetSceneOnStart : MonoBehaviour
     public GameObject scene6;
 
     // Start is called before the first frame update
+    void Awake()
+    {
+        scene1.SetActive(false);
+        scene2.SetActive(false);
+        scene3.SetActive(false);
+        scene4.SetActive(false);
+        scene5.SetActive(false);
+        scene6.SetActive(false);
+    }
+
     void Start()
     {
+
         Debug.Log("TEAM: " + SceneChanger.team + "SCENA: " + SceneChanger.scene);
+
+        if (SceneChanger.team == 0)
+        {
+            SceneChanger.team = 1;
+        }
+
+        if (SceneChanger.scene == 0)
+        {
+            SceneChanger.scene = 1;
+        }
 
         sceneTitle = GameObject.Find("Scene Title").GetComponent<Text>();
 

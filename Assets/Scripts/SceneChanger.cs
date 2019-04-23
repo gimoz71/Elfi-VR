@@ -21,9 +21,22 @@ public class SceneChanger : MonoBehaviour {
 
     public void nextScene()
     {
-        Debug.Log("sfgfgfd");
-        scene = scene + 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log(scene);
+        if (scene <= 5)
+        {
+            scene = scene + 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    public void prevScene()
+    {
+        Debug.Log(scene);
+        if (scene >= 1)
+        {
+            scene = scene - 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void sceneIntro()

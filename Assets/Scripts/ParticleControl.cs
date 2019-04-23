@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class ParticleControl : MonoBehaviour
 {
-
-
-
-
+    
     public ParticleSystem pSystem;
     public Text controlParticle;
 
@@ -16,19 +13,25 @@ public class ParticleControl : MonoBehaviour
     {
         pSystem.Stop();
         //pSystem.Stop();
+
+        
     }
 
     public void ParticleToggle()
     {
-        if(pSystem.isPaused == true || pSystem.isStopped == true)
+        AudioSource ghostWisper = GameObject.Find("Area Ghost Generator").GetComponent<AudioSource>();
+
+        if (pSystem.isPaused == true || pSystem.isStopped == true)
         {
             pSystem.Play();
+            ghostWisper.Play();
             controlParticle.text = "Ghost stop";
         } else
         {
             //pSystem.Pause();
             pSystem.Stop();
             pSystem.Clear();
+            ghostWisper.Stop();
             controlParticle.text = "Ghost play";
         }
     }
