@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using models;
+using UnityEngine.SceneManagement;
 
 public class ButtonArray : MonoBehaviour
 {
     public GameObject AnswerParent;
     public GameObject buttonPrefab;
     public TextMeshProUGUI question;
+
+    public Timer timer;
 
     public List<Domanda> domande = new List<Domanda>();
     public int indiceDomanda = 0;
@@ -28,9 +31,9 @@ public class ButtonArray : MonoBehaviour
         }
         domande = configManager.getDomandeSessione();
         
-        InitQuestion();
+        
     }
-
+    
     private void popolaDomanda(Domanda domanda) {
         resetAnswers();
 
@@ -59,12 +62,14 @@ public class ButtonArray : MonoBehaviour
     }
 
     private void popolaFineOK() {
+        timer.StopTimer();
         resetAnswers();
         question.text = "BRAVO";
     }
 
-    void InitQuestion()
+    public void InitQuestion()
     {
+        //timer.StartTimer();
         if (domande.Count > 0) {
             popolaDomanda(domande[indiceDomanda]);
         }
@@ -85,12 +90,13 @@ public class ButtonArray : MonoBehaviour
             else {
                 popolaDomanda(domande[indiceDomanda]);
             }
-            
+            timer.ResetTimer();
         }
         else {
             //gestione grafica errore risposta
             resetAnswers();
-            question.text = "SCEMO";
+            question.text = "ERRATO!";
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

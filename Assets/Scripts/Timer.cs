@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-
-    private GameObject countDownPanel; // pannello countdown
     public Text startStopText;
     public TextMeshProUGUI countDown;
     Coroutine startRitardoLancio;
@@ -20,9 +18,11 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countDownPanel = GameObject.Find("[COUNTDOWN]");
         isPaused = true;
-        startStopText.text = "Timer start";
+        if (startStopText)
+        {
+            startStopText.text = "Timer start";
+        }
         StartTimer();
     }
 
@@ -34,12 +34,11 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        startRitardoLancio = StartCoroutine(ritardoLancio(tempo));
+        startRitardoLancio = StartCoroutine(ritardoTempo(tempo));
     }
 
-    public IEnumerator ritardoLancio(float myDelay)
+    public IEnumerator ritardoTempo(float myDelay)
     {
-        //countDownPanel.SetActive(true);
         
 
         duration = myDelay;
@@ -78,13 +77,24 @@ public class Timer : MonoBehaviour
     {
         if(isPaused == true)
         {
-            startStopText.text = "Timer pause";
+            if (startStopText)
+            {
+                startStopText.text = "Timer pause";
+            }
             isPaused = false;
         } else
         {
-            startStopText.text = "Timer start";
+            if (startStopText)
+            {
+                startStopText.text = "Timer start";
+            }
             isPaused = true;
         }
             
+    }
+
+    public void StopTimer()
+    {
+        StopCoroutine(startRitardoLancio);
     }
 }

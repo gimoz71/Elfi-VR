@@ -101,6 +101,8 @@ public class SetSceneOnStart : MonoBehaviour
             scene4.SetActive(true);
             sceneTitle.text = "Scena 4";
 
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(false);
         }
 
         // Scena 5 - Descrizione oggetti
@@ -109,6 +111,15 @@ public class SetSceneOnStart : MonoBehaviour
             scene5.SetActive(true);
             sceneTitle.text = "Scena 5";
 
+            GameObject shapeSelect = GameObject.Find("Shape");
+            shapeSelect.SetActive(true);
+
+            GameObject.Find("Shape").GetComponent<DropDownPopulate>().ActivateShapesDropdown();
+
+        } else
+        {
+            GameObject shapeSelect = GameObject.Find("Shape");
+            shapeSelect.SetActive(false);
         }
 
         // Scena 6 - Enigma finale
