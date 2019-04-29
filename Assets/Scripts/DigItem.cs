@@ -13,6 +13,7 @@ public class DigItem : MonoBehaviour
 
     public ParticleSystem scintille;
     public Texture symbolTexture;
+    public AudioSource hitSound;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,7 @@ public class DigItem : MonoBehaviour
                 markerChild.SetActive(false);
             }
             Explode();
+            hitSound.Play();
         }
     }
 

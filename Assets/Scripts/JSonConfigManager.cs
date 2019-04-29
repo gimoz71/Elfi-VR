@@ -71,4 +71,20 @@ public class JSonConfigManager
 
         return combinazione;
     }
+
+   public string getDomandaFinale()
+    {
+        var domandaFinale = "";
+
+        try
+        {
+            domandaFinale = model.domandaFinale;
+        }
+        catch (Exception e)
+        {
+            var errore = e;
+        }
+
+        return domandaFinale;
+    }
 }

@@ -10,6 +10,7 @@ namespace models {
         public List<Domanda> domande;
         public string lucchetto;
         public List<string> setDomandeSessione;
+        public string domandaFinale;
     }
 
     [System.Serializable]

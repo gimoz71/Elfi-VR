@@ -12,6 +12,11 @@ public class ButtonArray : MonoBehaviour
     public GameObject buttonPrefab;
     public TextMeshProUGUI question;
 
+    AudioSource answerConfirm;
+
+    public AudioClip rightAnswerAudioClip;
+    public AudioClip errorAnswerAudioClip;
+
     public Timer timer;
 
     public List<Domanda> domande = new List<Domanda>();
@@ -30,8 +35,9 @@ public class ButtonArray : MonoBehaviour
             configManager.OpenConfigFile(JSonConfigManager.ConfigFilePathB);
         }
         domande = configManager.getDomandeSessione();
-        
-        
+
+
+        answerConfirm = GetComponent<AudioSource>();
     }
     
     private void popolaDomanda(Domanda domanda) {
@@ -64,7 +70,7 @@ public class ButtonArray : MonoBehaviour
     private void popolaFineOK() {
         timer.StopTimer();
         resetAnswers();
-        question.text = "BRAVO";
+        question.text = "";
     }
 
     public void InitQuestion()
@@ -91,12 +97,16 @@ public class ButtonArray : MonoBehaviour
                 popolaDomanda(domande[indiceDomanda]);
             }
             timer.ResetTimer();
+
+            answerConfirm.PlayOneShot(rightAnswerAudioClip, 1f);
         }
         else {
             //gestione grafica errore risposta
             resetAnswers();
-            question.text = "ERRATO!";
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            timer.StopTimer();
+            question.text = "";
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            answerConfirm.PlayOneShot(errorAnswerAudioClip, 1f);
         }
     }
 

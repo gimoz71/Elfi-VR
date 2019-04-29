@@ -16,16 +16,18 @@ public class SetSceneOnStart : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
+        
+    }
+
+    void Start()
+    {
         scene1.SetActive(false);
         scene2.SetActive(false);
         scene3.SetActive(false);
         scene4.SetActive(false);
         scene5.SetActive(false);
         scene6.SetActive(false);
-    }
-
-    void Start()
-    {
 
         Debug.Log("TEAM: " + SceneChanger.team + "SCENA: " + SceneChanger.scene);
 

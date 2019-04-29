@@ -11,6 +11,10 @@ public class ParentLock : MonoBehaviour
     public Text text;
     public float snapTime = 2;
 
+    public AudioSource lockedPit;
+
+    public AudioClip pitOn;
+
     private float dropTimer;
 
     // Start is called before the first frame update
@@ -39,6 +43,8 @@ public class ParentLock : MonoBehaviour
             rb.isKinematic = true;
             
             Debug.Log("ATTACHED");
+
+            lockedPit.PlayOneShot(pitOn, 1f);
         }
     }
 

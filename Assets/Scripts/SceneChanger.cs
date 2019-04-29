@@ -39,6 +39,11 @@ public class SceneChanger : MonoBehaviour {
         }
     }
 
+    public void resetCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void sceneIntro()
     {
         SceneManager.LoadScene("Intro");
