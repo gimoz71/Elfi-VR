@@ -9,14 +9,6 @@ public class ParticleControl : MonoBehaviour
     public ParticleSystem pSystem;
     public Text controlParticle;
 
-    public void Start()
-    {
-        pSystem.Stop();
-        //pSystem.Stop();
-
-        
-    }
-
     public void ParticleToggle()
     {
         AudioSource ghostWisper = GameObject.Find("Area Ghost Generator").GetComponent<AudioSource>();

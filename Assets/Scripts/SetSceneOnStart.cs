@@ -59,6 +59,17 @@ public class SetSceneOnStart : MonoBehaviour
                 lettereSimboli.SetActive(false);
             }
 
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);
+
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);
+
+
+
+            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);
+
         }
 
         // Scena 2 - Tangram
@@ -79,6 +90,18 @@ public class SetSceneOnStart : MonoBehaviour
                 lettereSimboli.SetActive(false);
             }
 
+
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);
+
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);
+
+
+
+            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);
+
         }
 
         // Scena 3 - Ghost lucchetto
@@ -90,6 +113,17 @@ public class SetSceneOnStart : MonoBehaviour
 
             GameObject ghostButton = GameObject.Find("Ghost");
             ghostButton.SetActive(true);
+
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);
+
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);
+
+
+
+            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);
 
 
         } else {
@@ -103,8 +137,18 @@ public class SetSceneOnStart : MonoBehaviour
             scene4.SetActive(true);
             sceneTitle.text = "Scena 4";
 
+
+
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(false);
+
             GameObject countDownMainArea = GameObject.Find("Countdown");
             countDownMainArea.SetActive(false);
+
+
+
+            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(true);
         }
 
         // Scena 5 - Descrizione oggetti
@@ -117,6 +161,18 @@ public class SetSceneOnStart : MonoBehaviour
             shapeSelect.SetActive(true);
 
             GameObject.Find("Shape").GetComponent<DropDownPopulate>().ActivateShapesDropdown();
+
+
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);
+
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);
+
+
+
+            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);
 
         } else
         {
@@ -141,6 +197,18 @@ public class SetSceneOnStart : MonoBehaviour
                 GameObject lettereSimboli = GameObject.Find("BrickB");
                 lettereSimboli.SetActive(false);
             }
+
+
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);
+
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);
+
+
+
+            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);
         } 
         
 

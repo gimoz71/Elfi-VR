@@ -19,6 +19,7 @@ public class PartCollision : MonoBehaviour
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
         particleDeath = GetComponent<AudioSource>();
+        part.Stop();
     }
 
     void OnParticleCollision(GameObject other)

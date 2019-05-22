@@ -37,21 +37,22 @@ public class DigItem : MonoBehaviour
         if (other.name == "Piccone")
         {
             picconataCounter++;
-
             Debug.Log(picconataCounter);
 
             if (picconataCounter == 8) {
                 itemChild.SetActive(true);
                 markerChild.SetActive(false);
             }
-            Explode();
-            hitSound.Play();
+            if (picconataCounter < 8)
+            {
+                hitSound.Play();
+                Explode();
+            }
         }
     }
 
     void Explode()
     {
-
         scintille.GetComponent<ParticleSystem>().Play();
     }
 }
