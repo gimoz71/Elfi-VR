@@ -300,11 +300,11 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 78fba860f3f9b914c916e525ae40416f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.46
+  m_Volume: 0.23
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 1
+  Spatialize: 0
   SpatializePostEffects: 1
   Priority: 128
   DopplerLevel: 1
@@ -359,7 +359,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.225
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5292,7 +5292,7 @@ GameObject:
   - component: {fileID: 5513225501733701585}
   - component: {fileID: 3983499949211126199}
   - component: {fileID: 5836283896843354505}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
