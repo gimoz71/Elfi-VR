@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayVolumetricLightingBuffer: 0
   frustumGridResolution: {x: 160, y: 88, z: 160}
-  enableAutomaticStereoResizing: 1
+  enableAutomaticStereoResizing: 0
   farClipPlaneDistance: 20
   depthBiasCoefficient: 0.39999998
   enableVolumes: 1
@@ -29,7 +29,7 @@ MonoBehaviour:
   enablePointLights: 0
   enablePointLightsShadows: 1
   enableLightsCookies: 1
-  enableDithering: 0
+  enableDithering: 1
   texture3DFiltering: 1
   enableDenoisingFilter: 0
   denoisingFilterRange: 0

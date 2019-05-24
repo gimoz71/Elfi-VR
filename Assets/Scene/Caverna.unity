@@ -9362,11 +9362,11 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5dfbfb99fe0e8ff48b042222b3afd26f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.099
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -22822,6 +22822,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6365887d8f75d0741b1ec0d311ac1553, type: 3}
+--- !u!1 &1514303721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5383881670762886901, guid: cb8eb455874fa18479ea37b84e721751,
+    type: 3}
+  m_PrefabInstance: {fileID: 5383881670158923880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1514303723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514303721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcd06815c47d30489f70df42db56a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frustumSettings:
+    baseSettings: {fileID: 11400000, guid: 1525a0808c31d904bad91f667ca97bf2, type: 2}
+    qualitySettings: {fileID: 11400000, guid: e3c3159037e4c36439ace3549ddb407b, type: 2}
 --- !u!1 &1523999515
 GameObject:
   m_ObjectHideFlags: 0
@@ -31235,10 +31256,6 @@ PrefabInstance:
     - target: {fileID: 3040906267227992520, guid: 2d2699715719b3542b7548c929d44185,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 98872398, guid: 2d2699715719b3542b7548c929d44185, type: 3}
-      propertyPath: Spatialize
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
