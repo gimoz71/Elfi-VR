@@ -46,6 +46,8 @@ public class SetSceneOnStart : MonoBehaviour
         // Scena 1 - Scavo
         if (SceneChanger.scene == 1)
         {
+            LightDimmer.value = 10f;
+
             scene1.SetActive(true);
             sceneTitle.text = "Scena 1";
 
@@ -75,6 +77,8 @@ public class SetSceneOnStart : MonoBehaviour
         // Scena 2 - Tangram
         if (SceneChanger.scene == 2)
         {
+            LightDimmer.value = 4f;
+
             scene2.SetActive(true);
             sceneTitle.text = "Scena 2";
 
@@ -107,6 +111,7 @@ public class SetSceneOnStart : MonoBehaviour
         // Scena 3 - Ghost lucchetto
         if (SceneChanger.scene == 3)
         {
+            LightDimmer.value = 3f;
 
             scene3.SetActive(true);
             sceneTitle.text = "Scena 3";
@@ -134,6 +139,8 @@ public class SetSceneOnStart : MonoBehaviour
         // Scena 4 - Entità domande
         if (SceneChanger.scene == 4)
         {
+            LightDimmer.value = 2f;
+
             scene4.SetActive(true);
             sceneTitle.text = "Scena 4";
 
@@ -154,6 +161,8 @@ public class SetSceneOnStart : MonoBehaviour
         // Scena 5 - Descrizione oggetti
         if (SceneChanger.scene == 5)
         {
+            LightDimmer.value = 1.5f;
+
             scene5.SetActive(true);
             sceneTitle.text = "Scena 5";
 
@@ -183,6 +192,8 @@ public class SetSceneOnStart : MonoBehaviour
         // Scena 6 - Enigma finale
         if (SceneChanger.scene == 6)
         {
+            LightDimmer.value = 0f;
+
             scene6.SetActive(true);
             sceneTitle.text = "Scena 6";
 
