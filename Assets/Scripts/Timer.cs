@@ -10,14 +10,25 @@ public class Timer : MonoBehaviour
     public Text startStopText;
     public TextMeshProUGUI countDown;
     Coroutine startRitardoLancio;
+    public Text tempoInput;
+    private int tempo;
+
+
     private float duration;
-    public float tempo;
     private bool isPaused;
 
+    private int min;
+    private int sec;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
+
+        //tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
+        tempo = 10;
+
         isPaused = true;
         if (startStopText)
         {
@@ -42,8 +53,11 @@ public class Timer : MonoBehaviour
         
 
         duration = myDelay;
-            
-        countDown.text = "" + duration;
+
+        min = Mathf.FloorToInt(duration / 60);
+        sec = Mathf.FloorToInt(duration % 60);
+        countDown.text = min.ToString("00") + ":" + sec.ToString("00");
+
         while (duration > 0)
         {
             while (isPaused)
@@ -53,7 +67,10 @@ public class Timer : MonoBehaviour
             
             yield return new WaitForSeconds(1);
             duration--;
-            countDown.text = "" + duration;
+
+            min = Mathf.FloorToInt(duration / 60);
+            sec = Mathf.FloorToInt(duration % 60);
+            countDown.text = min.ToString("00") + ":" + sec.ToString("00");
 
             while (isPaused)
             {
@@ -69,14 +86,19 @@ public class Timer : MonoBehaviour
 
     public void ResetTimer()
     {
+        tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
         duration = tempo;
-        countDown.text = "" + duration;
+        min = Mathf.FloorToInt(duration / 60);
+        sec = Mathf.FloorToInt(duration % 60);
+        countDown.text = min.ToString("00") + ":" + sec.ToString("00");
     }
 
     public void StartPauseTimer()
     {
-        if(isPaused == true)
+       
+        if (isPaused == true)
         {
+            
             if (startStopText)
             {
                 startStopText.text = "Timer pause";
