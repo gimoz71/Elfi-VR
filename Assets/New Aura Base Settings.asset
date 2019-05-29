@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59306422a2ca4454aabce3daa79c3334, type: 3}
   m_Name: New Aura Base Settings
   m_EditorClassIdentifier: 
-  useDensity: 1
-  density: 0.025
+  useDensity: 0
+  density: 0
   useScattering: 0
   scattering: 0.5
   useAmbientLighting: 0
   ambientLightingStrength: 1
-  useColor: 1
+  useColor: 0
   color: {r: 0.49999997, g: 0.5, b: 0.4999995, a: 1}
-  colorStrength: 1
+  colorStrength: 0
   useExtinction: 0
   extinction: 0.75
