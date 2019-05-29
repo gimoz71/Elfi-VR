@@ -51,7 +51,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -868,28 +868,28 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 5
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.063158035
-          inSlope: 0
-          outSlope: 0
+          value: 0.4078287
+          inSlope: 0.009239209
+          outSlope: 0.009239209
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.073509015
         - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 1.9334922
-          outSlope: 1.9334922
+          time: 0.99816895
+          value: 0.75520897
+          inSlope: 0.56431663
+          outSlope: 0.56431663
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.19599116
+          inWeight: 0.031439234
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -2576,7 +2576,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.71
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2733,7 +2733,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.42
+    frequency: 0.2
     damping: 0
     octaves: 1
     octaveMultiplier: 0.5
@@ -2742,7 +2742,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.31
+      scalar: 0.08
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4862,7 +4862,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9582,7 +9582,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9951ad417d656bb4bb0fc481d84e5480, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.185
+  m_Volume: 0.031
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9679,7 +9679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: abbb938d1eee04049a97ad4ada3aef8d, type: 3}
       propertyPath: m_Name
-      value: PlaneGenerator
+      value: Area Ghost Generator
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: abbb938d1eee04049a97ad4ada3aef8d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9743,7 +9743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: abbb938d1eee04049a97ad4ada3aef8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.43
+      value: 5.27
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: abbb938d1eee04049a97ad4ada3aef8d, type: 3}
       propertyPath: m_RootOrder

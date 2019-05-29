@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 
-[ExecuteInEditMode]
+
 public class PartCollision : MonoBehaviour
 {
     public ParticleSystem part;
@@ -16,10 +16,16 @@ public class PartCollision : MonoBehaviour
 
     void Start()
     {
-        part = GetComponent<ParticleSystem>();
-        collisionEvents = new List<ParticleCollisionEvent>();
-        particleDeath = GetComponent<AudioSource>();
-        part.Stop();
+        if (SceneChanger.scene == 3)
+        {
+            part = GetComponent<ParticleSystem>();
+            if (part.isPaused == false || part.isStopped == false)
+            {
+                part.Stop();
+            }
+            collisionEvents = new List<ParticleCollisionEvent>();
+            particleDeath = GetComponent<AudioSource>();
+        }
     }
 
     void OnParticleCollision(GameObject other)

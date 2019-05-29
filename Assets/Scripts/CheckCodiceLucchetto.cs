@@ -16,6 +16,7 @@ public class CheckCodiceLucchetto : MonoBehaviour
     private string codice;
 
     public GameObject treasure;
+    public ParticleSystem pSystem;
     private Animation treasureAnimation;
     public Text risultato;
 
@@ -61,6 +62,10 @@ public class CheckCodiceLucchetto : MonoBehaviour
             pannelloLucchetto.SetActive(false);
             chiave.enabled = false;
             eventSound.PlayOneShot(successSound, 1f);
+            pSystem.Stop();
+            pSystem.Clear();
+            AudioSource ghostWisper = GameObject.Find("Area Ghost Generator").GetComponent<AudioSource>();
+            ghostWisper.Stop();
         } else
         {
             Debug.Log("ERRORE!!");
