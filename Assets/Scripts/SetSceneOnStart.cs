@@ -12,15 +12,9 @@ public class SetSceneOnStart : MonoBehaviour
     public GameObject scene4;
     public GameObject scene5;
     public GameObject scene6;
+    
 
-    // Start is called before the first frame update
     void Awake()
-    {
-        
-        
-    }
-
-    void Start()
     {
         scene1.SetActive(false);
         scene2.SetActive(false);
