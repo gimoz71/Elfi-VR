@@ -12,7 +12,7 @@ public class DigItem : MonoBehaviour
     private int picconataCounter;
 
     public ParticleSystem scintille;
-    public Texture symbolTexture;
+    //public Texture symbolTexture;
     public AudioSource hitSound;
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class DigItem : MonoBehaviour
 
         scintille.GetComponent<ParticleSystem>().Stop();
 
-        itemChild.GetComponent<Renderer>().material.mainTexture = symbolTexture;
+        //itemChild.GetComponent<Renderer>().material.mainTexture = symbolTexture;
     }
 
     // Update is called once per frame

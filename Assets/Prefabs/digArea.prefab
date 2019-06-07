@@ -273,7 +273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scintille: {fileID: 8207565850909911146}
-  symbolTexture: {fileID: 2800000, guid: 79b33e86a43b86040970f70d716efa9f, type: 3}
   hitSound: {fileID: 98872398}
 --- !u!135 &6547009750006463362
 SphereCollider:
@@ -572,7 +571,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

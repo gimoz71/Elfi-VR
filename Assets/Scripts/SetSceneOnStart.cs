@@ -203,6 +203,8 @@ public class SetSceneOnStart : MonoBehaviour
                 lettereSimboli.SetActive(false);
             }
 
+            GameObject finaleButton = GameObject.Find("Finale");
+            finaleButton.SetActive(true);
 
             GameObject timerPanel = GameObject.Find("Timer Panel");
             timerPanel.SetActive(true);
@@ -214,7 +216,11 @@ public class SetSceneOnStart : MonoBehaviour
 
             GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
             questionTimePanel.SetActive(false);
-        } 
+        } else
+        {
+            GameObject finaleButton = GameObject.Find("Finale");
+            finaleButton.SetActive(false);
+        }
         
 
 
