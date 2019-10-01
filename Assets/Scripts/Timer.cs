@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
     {
 
         //tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
-        tempo = 10;
+        tempo = 180;
 
         isPaused = true;
         if (startStopText)
@@ -86,7 +86,7 @@ public class Timer : MonoBehaviour
 
     public void ResetTimer()
     {
-        tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
+        tempo = int.Parse((tempoInput.text == "" ? "180" : tempoInput.text));
         duration = tempo;
         min = Mathf.FloorToInt(duration / 60);
         sec = Mathf.FloorToInt(duration % 60);

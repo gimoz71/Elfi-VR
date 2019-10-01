@@ -12,6 +12,9 @@ public class ButtonArray : MonoBehaviour
     public GameObject buttonPrefab;
     public TextMeshProUGUI question;
 
+    public ParticleSystem rightParticle;
+    public ParticleSystem wrongParticle;
+
     AudioSource answerConfirm;
 
     public AudioClip rightAnswerAudioClip;
@@ -36,6 +39,9 @@ public class ButtonArray : MonoBehaviour
         }
         domande = configManager.getDomandeSessione();
 
+
+        rightParticle.GetComponent<ParticleSystem>().Stop();
+        wrongParticle.GetComponent<ParticleSystem>().Stop();
 
         answerConfirm = GetComponent<AudioSource>();
     }
@@ -70,7 +76,7 @@ public class ButtonArray : MonoBehaviour
     private void popolaFineOK() {
         timer.StopTimer();
         resetAnswers();
-        question.text = "";
+        question.text = "Hai concluso la tua sessione di domande";
     }
 
     public void InitQuestion()
@@ -96,16 +102,31 @@ public class ButtonArray : MonoBehaviour
             else {
                 popolaDomanda(domande[indiceDomanda]);
             }
-            timer.ResetTimer();
+            //timer.ResetTimer();
 
+            rightParticle.GetComponent<ParticleSystem>().Play();
             answerConfirm.PlayOneShot(rightAnswerAudioClip, 1f);
         }
         else {
             //gestione grafica errore risposta
-            resetAnswers();
-            timer.StopTimer();
-            question.text = "";
+            //resetAnswers();
+            //timer.StopTimer();
+            //question.text = "";
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+            //gestione grafica risposta corretta
+            if (indiceDomanda == domande.Count)
+            {
+                //sono arrivato alla fine delle domande
+                popolaFineOK();
+            }
+            else
+            {
+                popolaDomanda(domande[indiceDomanda]);
+            }
+            //timer.ResetTimer();
+
+            wrongParticle.GetComponent<ParticleSystem>().Play();
             answerConfirm.PlayOneShot(errorAnswerAudioClip, 1f);
         }
     }

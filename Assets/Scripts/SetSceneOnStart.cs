@@ -66,6 +66,7 @@ public class SetSceneOnStart : MonoBehaviour
             GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
             questionTimePanel.SetActive(false);
 
+
         }
 
         // Scena 2 - Tangram
@@ -94,8 +95,7 @@ public class SetSceneOnStart : MonoBehaviour
 
             GameObject countDownMainArea = GameObject.Find("Countdown");
             countDownMainArea.SetActive(true);
-
-
+            
 
             GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
             questionTimePanel.SetActive(false);
@@ -204,7 +204,10 @@ public class SetSceneOnStart : MonoBehaviour
             }
 
             GameObject finaleButton = GameObject.Find("Finale");
-            finaleButton.SetActive(true);
+            finaleButton.SetActive(false);
+
+            GameObject finaleTotaleButton = GameObject.Find("Finale Totale");
+            finaleTotaleButton.SetActive(true);
 
             GameObject timerPanel = GameObject.Find("Timer Panel");
             timerPanel.SetActive(true);
@@ -218,8 +221,8 @@ public class SetSceneOnStart : MonoBehaviour
             questionTimePanel.SetActive(false);
         } else
         {
-            GameObject finaleButton = GameObject.Find("Finale");
-            finaleButton.SetActive(false);
+            GameObject finaleTotaleButton = GameObject.Find("Finale Totale");
+            finaleTotaleButton.SetActive(false);
         }
         
 
