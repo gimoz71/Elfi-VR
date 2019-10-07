@@ -24,11 +24,11 @@ public class MessageState : MonoBehaviour
     {
         if (value == 1)
         {
-            message.text = " Bravo, hai superato l’enigma ma non è sufficiente. Passa la sfida ad un altro clan per ottenere un numero di pietre sufficienti.";
+            message.text = "Peccato, non hai finito, devi abbandonare la grotta e la sfida passa in mano all’altro clan.";
         }
         if (value == 2)
         {
-            message.text = "Peccato, non hai finito, devi abbandonare la grotta e la sfida passa in mano all’altro clan.";
+            message.text = "Bravo, hai superato l’enigma ma non è sufficiente. Passa la sfida ad un altro clan per ottenere un numero di pietre sufficienti.";
         }
         if (value == 3)
         {

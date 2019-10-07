@@ -26,6 +26,8 @@ public class ButtonArray : MonoBehaviour
     public int indiceDomanda = 0;
     public int numeroRisposte = 0;
 
+    public int credit;
+
     private void Start()
     {
         var configManager = JSonConfigManager.Instance;
@@ -76,7 +78,8 @@ public class ButtonArray : MonoBehaviour
     private void popolaFineOK() {
         timer.StopTimer();
         resetAnswers();
-        question.text = "Hai concluso la tua sessione di domande";
+        //question.text = "Complimenti, hai risposto a tutte le domande!<br>Puoi passare alla fase successiva" + "<br>Risposte giuste: " + credit + " su 18";
+        question.text = "Complimenti, hai risposto a tutte le domande!<br>Puoi passare alla fase successiva" + "<br><br>Hai guadagnato " + credit + " punti";
     }
 
     public void InitQuestion()
@@ -90,44 +93,42 @@ public class ButtonArray : MonoBehaviour
 
     void ButtonClicked(string idRisposta, string idDomanda )
     {
+        if (indiceDomanda == domande.Count)
+        {
+            //sono arrivato alla fine delle domande
+            popolaFineOK();
+        }
+        else
+        {
+            popolaDomanda(domande[indiceDomanda]);
+        }
+
         //verifica risposta
         if (idRisposta.Equals(getRispostaValidaId(idDomanda)))
         {
-            //gestione grafica risposta corretta
-            if (indiceDomanda == domande.Count)
-            {
-                //sono arrivato alla fine delle domande
-                popolaFineOK();
-            }
-            else {
-                popolaDomanda(domande[indiceDomanda]);
-            }
-            //timer.ResetTimer();
+           
 
             rightParticle.GetComponent<ParticleSystem>().Play();
             answerConfirm.PlayOneShot(rightAnswerAudioClip, 1f);
+
+            credit += 2;
         }
         else {
+
             //gestione grafica errore risposta
             //resetAnswers();
             //timer.StopTimer();
             //question.text = "";
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
-            //gestione grafica risposta corretta
-            if (indiceDomanda == domande.Count)
-            {
-                //sono arrivato alla fine delle domande
-                popolaFineOK();
-            }
-            else
-            {
-                popolaDomanda(domande[indiceDomanda]);
-            }
-            //timer.ResetTimer();
 
             wrongParticle.GetComponent<ParticleSystem>().Play();
             answerConfirm.PlayOneShot(errorAnswerAudioClip, 1f);
+
+            if (credit != 0  || credit > 0)
+            {
+                credit -= 1;
+            }
         }
     }
 

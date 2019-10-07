@@ -6,6 +6,7 @@ public class swash : MonoBehaviour
 {
     public AudioSource swoshAudio;
     public ParticleSystem splash;
+    public int StoneCounter;
 
     void Start()
     {

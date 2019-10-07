@@ -26,6 +26,7 @@ public class FinalFadeTotal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fraseFinale.SetActive(false);
         FinalPhraseSparkle.GetComponent<ParticleSystem>().Stop();
     }
 
@@ -43,6 +44,7 @@ public class FinalFadeTotal : MonoBehaviour
     
     public void enableFinalScene()
     {
+        fraseFinale.SetActive(true);
         //GameObject fraseFinale = GameObject.Find("Frase Finale");
         if (FinalPhraseAudio)
         {
@@ -52,7 +54,7 @@ public class FinalFadeTotal : MonoBehaviour
         {
             FinalPhraseSparkle.GetComponent<ParticleSystem>().Play();
         }
-        fraseFinale.SetActive(true);
+       
         coroutine = WaitAndPrint(finalDelay);
         StartCoroutine(coroutine);
     }

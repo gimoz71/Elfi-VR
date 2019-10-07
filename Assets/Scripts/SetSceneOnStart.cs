@@ -43,7 +43,7 @@ public class SetSceneOnStart : MonoBehaviour
             LightDimmer.value = 10f;
 
             scene1.SetActive(true);
-            sceneTitle.text = "Scena 1";
+            sceneTitle.text = "1: Naggaroth";
 
             if (SceneChanger.team == 1)
             {
@@ -75,7 +75,7 @@ public class SetSceneOnStart : MonoBehaviour
             LightDimmer.value = 4f;
 
             scene2.SetActive(true);
-            sceneTitle.text = "Scena 2";
+            sceneTitle.text = "2: Tangramion";
 
 
             if (SceneChanger.team == 1)
@@ -108,7 +108,7 @@ public class SetSceneOnStart : MonoBehaviour
             LightDimmer.value = 3f;
 
             scene3.SetActive(true);
-            sceneTitle.text = "Scena 3";
+            sceneTitle.text = "3: Treasure Chest";
 
             GameObject ghostButton = GameObject.Find("Ghost");
             ghostButton.SetActive(true);
@@ -136,7 +136,7 @@ public class SetSceneOnStart : MonoBehaviour
             LightDimmer.value = 2f;
 
             scene4.SetActive(true);
-            sceneTitle.text = "Scena 4";
+            sceneTitle.text = "4: Wise Totem";
 
 
 
@@ -158,7 +158,7 @@ public class SetSceneOnStart : MonoBehaviour
             LightDimmer.value = 1.5f;
 
             scene5.SetActive(true);
-            sceneTitle.text = "Scena 5";
+            sceneTitle.text = "5: Sei sicuro di quello che vedi?";
 
             GameObject shapeSelect = GameObject.Find("Shape");
             shapeSelect.SetActive(true);
@@ -189,7 +189,7 @@ public class SetSceneOnStart : MonoBehaviour
             LightDimmer.value = 0f;
 
             scene6.SetActive(true);
-            sceneTitle.text = "Scena 6";
+            sceneTitle.text = "6: Luci o Tenebre?";
 
 
             if (SceneChanger.team == 1)
@@ -203,8 +203,8 @@ public class SetSceneOnStart : MonoBehaviour
                 lettereSimboli.SetActive(false);
             }
 
-            GameObject finaleButton = GameObject.Find("Finale");
-            finaleButton.SetActive(false);
+            //GameObject finaleButton = GameObject.Find("Finale");
+            //finaleButton.SetActive(false);
 
             GameObject finaleTotaleButton = GameObject.Find("Finale Totale");
             finaleTotaleButton.SetActive(true);

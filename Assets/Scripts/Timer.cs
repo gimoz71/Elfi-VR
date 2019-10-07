@@ -9,9 +9,10 @@ public class Timer : MonoBehaviour
 {
     public Text startStopText;
     public TextMeshProUGUI countDown;
+    public TextMeshProUGUI message;
     Coroutine startRitardoLancio;
     public Text tempoInput;
-    private int tempo;
+    public int tempo = 180;
 
 
     private float duration;
@@ -20,6 +21,9 @@ public class Timer : MonoBehaviour
     private int min;
     private int sec;
 
+    public ButtonArray buttonArrayCredit;
+
+
     
 
     // Start is called before the first frame update
@@ -27,7 +31,7 @@ public class Timer : MonoBehaviour
     {
 
         //tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
-        tempo = 180;
+        //tempo = 180;
 
         isPaused = true;
         if (startStopText)
@@ -35,6 +39,7 @@ public class Timer : MonoBehaviour
             startStopText.text = "Timer start";
         }
         StartTimer();
+        
     }
 
     // Update is called once per frame
@@ -77,16 +82,16 @@ public class Timer : MonoBehaviour
                 yield return null;
             }
         }
-        //yield return new WaitForSeconds(myDelay);
-        //yield return StartCoroutine(sequenzaLancio(myQuantity, myInterval));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //
+        message.text = " Tempo Scaduto." + "<br><br>Hai guadagnato " + buttonArrayCredit.credit + " punti";
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
  
 
     public void ResetTimer()
     {
-        tempo = int.Parse((tempoInput.text == "" ? "180" : tempoInput.text));
+        tempo = int.Parse((tempoInput.text == "" ? tempo+"" : tempoInput.text));
         duration = tempo;
         min = Mathf.FloorToInt(duration / 60);
         sec = Mathf.FloorToInt(duration % 60);

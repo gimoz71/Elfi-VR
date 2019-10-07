@@ -252,7 +252,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 0
+  m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -267,13 +267,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67701542}
-  m_LocalRotation: {x: -0.13523428, y: -0.479829, z: -0.17243598, w: -0.8495538}
-  m_LocalPosition: {x: -9.14, y: 7.35, z: -2.33}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 3.6870003, y: 419.73502, z: 25.065}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &67701546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2140,6 +2140,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5383881671676244036, guid: cb8eb455874fa18479ea37b84e721751,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82793897, guid: cb8eb455874fa18479ea37b84e721751, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

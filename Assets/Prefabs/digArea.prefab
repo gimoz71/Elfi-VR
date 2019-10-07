@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565960e2c521e7440af0c400c620d07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  textureName: symbol-2
 --- !u!114 &3444044811776417537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,12 +265,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
     actionSetPath: 
-  hideHandOnAttach: 1
+  hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 0
   handAnimationOnPickup: 0
   setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
+  useHandObjectAttachmentPoint: 0
   attachEaseIn: 0
   snapAttachEaseInCurve:
     serializedVersion: 2
@@ -299,7 +299,7 @@ MonoBehaviour:
   snapAttachEaseInTime: 0.15
   snapAttachEaseInCompleted: 0
   skeletonPoser: {fileID: 0}
-  handFollowTransform: 1
+  handFollowTransform: 0
   highlightOnHover: 1
   hideHighlight: []
 --- !u!114 &6543361449696896812
@@ -5182,6 +5182,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3e0bdaba4796b0643a336ad13392e9a8, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3e0bdaba4796b0643a336ad13392e9a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5225,18 +5229,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 3e0bdaba4796b0643a336ad13392e9a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -116.712006
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 3e0bdaba4796b0643a336ad13392e9a8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 3e0bdaba4796b0643a336ad13392e9a8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 3e0bdaba4796b0643a336ad13392e9a8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 3e0bdaba4796b0643a336ad13392e9a8, type: 3}
       propertyPath: m_Materials.Array.data[0]

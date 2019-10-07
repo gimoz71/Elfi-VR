@@ -44,7 +44,7 @@ public class ParentLock : MonoBehaviour
             
             Debug.Log("ATTACHED");
 
-            lockedPit.PlayOneShot(pitOn, 1f);
+            //lockedPit.PlayOneShot(pitOn, 1f);
         }
     }
 

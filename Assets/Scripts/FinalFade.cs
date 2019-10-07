@@ -13,7 +13,11 @@ public class FinalFade : MonoBehaviour
     public float startValue = 0.025f;
     public float changePerSecond = 0.1f;
     public bool triggerEnd = false;
-    
+
+    public AudioSource audioFlash;
+
+    public AudioClip clipFlash;
+
 
 
     // Update is called once per frame
@@ -31,6 +35,7 @@ public class FinalFade : MonoBehaviour
     public void enable()
     {
         triggerEnd = true;
+        audioFlash.PlayOneShot(clipFlash, 1f);
     }
 
  
