@@ -32,7 +32,6 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         //tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
         //tempo = 180;
 

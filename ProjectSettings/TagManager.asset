@@ -12,6 +12,7 @@ TagManager:
   - subMenu
   - mainMenu
   - shapes
+  - answer
   layers:
   - Default
   - TransparentFX

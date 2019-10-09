@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 5878152077405628462}
   m_Layer: 12
   m_Name: Answer
-  m_TagString: Untagged
+  m_TagString: answer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
