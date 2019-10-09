@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
 {
     public Text startStopText;
     public TextMeshProUGUI countDown;
+    public Text countDownUI;
     public TextMeshProUGUI message;
     Coroutine startRitardoLancio;
     public Text tempoInput;
@@ -23,7 +24,21 @@ public class Timer : MonoBehaviour
 
     public ButtonArray buttonArrayCredit;
 
+    public FinalFade fade;
 
+    void Awake()
+    {
+        if (SceneChanger.scene == 4)
+        {
+            countDown = GameObject.Find("QuestionCountdownText").GetComponent<TextMeshProUGUI>();
+            message = GameObject.Find("QuestionText").GetComponent<TextMeshProUGUI>();
+        }
+        else
+        {
+            countDown = GameObject.Find("Countdown_text").GetComponent<TextMeshProUGUI>();
+            message = GameObject.Find("Messaggio").GetComponent<TextMeshProUGUI>();
+        }
+    }
     
 
     // Start is called before the first frame update
@@ -39,55 +54,22 @@ public class Timer : MonoBehaviour
             startStopText.text = "Timer start";
         }
         StartTimer();
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        fade = GameObject.Find("Finale").GetComponent<FinalFade>();
+
     }
+    
+    // Avvio il Timer
 
     public void StartTimer()
     {
         startRitardoLancio = StartCoroutine(ritardoTempo(tempo));
     }
 
-    public IEnumerator ritardoTempo(float myDelay)
-    {
-        
+    
 
-        duration = myDelay;
+    // Resetto il Timer
 
-        min = Mathf.FloorToInt(duration / 60);
-        sec = Mathf.FloorToInt(duration % 60);
-        countDown.text = min.ToString("00") + ":" + sec.ToString("00");
-
-        while (duration > 0)
-        {
-            while (isPaused)
-            {
-                yield return null;
-            }
-            
-            yield return new WaitForSeconds(1);
-            duration--;
-
-            min = Mathf.FloorToInt(duration / 60);
-            sec = Mathf.FloorToInt(duration % 60);
-            countDown.text = min.ToString("00") + ":" + sec.ToString("00");
-
-            while (isPaused)
-            {
-                yield return null;
-            }
-        }
-        //
-        message.text = " Tempo Scaduto." + "<br><br>Hai guadagnato " + buttonArrayCredit.credit + " punti";
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
- 
 
     public void ResetTimer()
     {
@@ -96,7 +78,12 @@ public class Timer : MonoBehaviour
         min = Mathf.FloorToInt(duration / 60);
         sec = Mathf.FloorToInt(duration % 60);
         countDown.text = min.ToString("00") + ":" + sec.ToString("00");
+        countDownUI.text = countDown.text;
     }
+
+
+
+    // Avvio e metto in pausa il Timer
 
     public void StartPauseTimer()
     {
@@ -120,8 +107,59 @@ public class Timer : MonoBehaviour
             
     }
 
+
+    // Stoppo il Timer
+
     public void StopTimer()
     {
         StopCoroutine(startRitardoLancio);
+    }
+
+
+
+    // routine per il calcolo del tempo
+
+    public IEnumerator ritardoTempo(float myDelay)
+    {
+
+        duration = myDelay;
+
+        min = Mathf.FloorToInt(duration / 60);
+        sec = Mathf.FloorToInt(duration % 60);
+        countDown.text = min.ToString("00") + ":" + sec.ToString("00");
+        countDownUI.text = countDown.text;
+
+        while (duration > 0)
+        {
+            while (isPaused)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(1);
+            duration--;
+
+            min = Mathf.FloorToInt(duration / 60);
+            sec = Mathf.FloorToInt(duration % 60);
+            countDown.text = min.ToString("00") + ":" + sec.ToString("00");
+            countDownUI.text = countDown.text;
+
+            while (isPaused)
+            {
+                yield return null;
+            }
+        }
+        //
+        if (SceneChanger.scene == 4)
+        {
+            message.text = " Tempo Scaduto." + "<br><br>Hai guadagnato " + buttonArrayCredit.credit + " punti";
+        }
+        else
+        {
+            message.text = "Tempo Scaduto";
+        }
+
+        fade.enable();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

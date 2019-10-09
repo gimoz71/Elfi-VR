@@ -13,6 +13,7 @@ public class PartCollision : MonoBehaviour
     public GameObject sword;
     public GameObject player;
     public AudioSource particleDeath;
+    public FinalFade fade;
 
     void Start()
     {
@@ -25,6 +26,8 @@ public class PartCollision : MonoBehaviour
             }
             collisionEvents = new List<ParticleCollisionEvent>();
             particleDeath = GetComponent<AudioSource>();
+
+            fade = GameObject.Find("Finale").GetComponent<FinalFade>();
         }
     }
 
@@ -40,7 +43,8 @@ public class PartCollision : MonoBehaviour
             //Debug.Log(i);
             if (other == player)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                fade.enable();
                 Debug.Log("COLLISION!!!");
             } else if (other == sword)
             {
