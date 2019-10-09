@@ -26,19 +26,7 @@ public class Timer : MonoBehaviour
 
     public FinalFade fade;
 
-    void Awake()
-    {
-        if (SceneChanger.scene == 4)
-        {
-            countDown = GameObject.Find("QuestionCountdownText").GetComponent<TextMeshProUGUI>();
-            message = GameObject.Find("QuestionText").GetComponent<TextMeshProUGUI>();
-        }
-        else
-        {
-            countDown = GameObject.Find("Countdown_text").GetComponent<TextMeshProUGUI>();
-            message = GameObject.Find("Messaggio").GetComponent<TextMeshProUGUI>();
-        }
-    }
+   
     
 
     // Start is called before the first frame update
