@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fluctuate : MonoBehaviour
+public class Fluctuate : MonoBehaviour
 {
     public Vector3 from = new Vector3(0f, 0f, 0f);
     public Vector3 to = new Vector3(0f, 0.1f, 0f);

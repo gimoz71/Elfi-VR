@@ -37,7 +37,10 @@ public class SetSceneOnStart : MonoBehaviour
 
         sceneTitle = GameObject.Find("Scene Title").GetComponent<Text>();
 
-        // Scena 1 - Scavo
+
+
+
+        // Scena 1 - Naggaroth
         if (SceneChanger.scene == 1)
         {
             LightDimmer.value = 10f;
@@ -55,21 +58,22 @@ public class SetSceneOnStart : MonoBehaviour
                 lettereSimboli.SetActive(false);
             }
 
-            GameObject timerPanel = GameObject.Find("Timer Panel");
-            timerPanel.SetActive(true);
+            /*GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);*/
 
-            GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(true);
+            /*GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);*/
 
-
-
-            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
-            questionTimePanel.SetActive(false);
+            /*GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);*/
 
 
         }
 
-        // Scena 2 - Tangram
+
+
+
+        // Scena 2 - Tangramion
         if (SceneChanger.scene == 2)
         {
             LightDimmer.value = 4f;
@@ -90,19 +94,22 @@ public class SetSceneOnStart : MonoBehaviour
             }
 
 
-            GameObject timerPanel = GameObject.Find("Timer Panel");
-            timerPanel.SetActive(true);
+            /*GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);*/
 
-            GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(true);
+            /*GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);*/
             
 
-            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
-            questionTimePanel.SetActive(false);
+           /* GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);*/
 
         }
 
-        // Scena 3 - Ghost lucchetto
+
+
+
+        // Scena 3 - Treasure Chest
         if (SceneChanger.scene == 3)
         {
             LightDimmer.value = 3f;
@@ -113,16 +120,16 @@ public class SetSceneOnStart : MonoBehaviour
             GameObject ghostButton = GameObject.Find("Ghost");
             ghostButton.SetActive(true);
 
-            GameObject timerPanel = GameObject.Find("Timer Panel");
-            timerPanel.SetActive(true);
+            /*GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);*/
 
-            GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(true);
+            /*GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);*/
 
 
 
-            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
-            questionTimePanel.SetActive(false);
+            /*GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);*/
 
 
         } else {
@@ -130,7 +137,10 @@ public class SetSceneOnStart : MonoBehaviour
             ghostButton.SetActive(false);
         }
 
-        // Scena 4 - Entità domande
+
+
+
+        // Scena 4 - Wise Totem
         if (SceneChanger.scene == 4)
         {
             LightDimmer.value = 2f;
@@ -140,19 +150,31 @@ public class SetSceneOnStart : MonoBehaviour
 
 
 
-            GameObject timerPanel = GameObject.Find("Timer Panel");
+            /*GameObject timerPanel = GameObject.Find("Timer Panel");
             timerPanel.SetActive(false);
 
             GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(false);
-
+            countDownMainArea.SetActive(false);*/
 
 
             GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
             questionTimePanel.SetActive(true);
+        } else
+        {
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);
+
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);
+
+            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);
         }
 
-        // Scena 5 - Descrizione oggetti
+
+
+
+        // Scena 5 - Sei sicuro di quello che vedi?
         if (SceneChanger.scene == 5)
         {
             LightDimmer.value = 1.5f;
@@ -166,24 +188,26 @@ public class SetSceneOnStart : MonoBehaviour
             GameObject.Find("Shape").GetComponent<DropDownPopulate>().ActivateShapesDropdown();
 
 
-            GameObject timerPanel = GameObject.Find("Timer Panel");
-            timerPanel.SetActive(true);
+            /*GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);*/
 
-            GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(true);
+            /*GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);*/
+            
+            /*GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);*/
 
-
-
-            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
-            questionTimePanel.SetActive(false);
-
-        } else
+        }
+        else
         {
             GameObject shapeSelect = GameObject.Find("Shape");
             shapeSelect.SetActive(false);
         }
 
-        // Scena 6 - Enigma finale
+
+
+
+        // Scena 6 - Luci o Tenebre?
         if (SceneChanger.scene == 6)
         {
             LightDimmer.value = 0f;
@@ -203,35 +227,25 @@ public class SetSceneOnStart : MonoBehaviour
                 lettereSimboli.SetActive(false);
             }
 
-            //GameObject finaleButton = GameObject.Find("Finale");
-            //finaleButton.SetActive(false);
 
             GameObject finaleTotaleButton = GameObject.Find("Finale Totale");
             finaleTotaleButton.SetActive(true);
 
-            GameObject timerPanel = GameObject.Find("Timer Panel");
-            timerPanel.SetActive(true);
+            /*GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(true);*/
 
-            GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(true);
+            /*GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(true);*/
 
 
 
-            GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
-            questionTimePanel.SetActive(false);
-        } else
+            /*GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
+            questionTimePanel.SetActive(false);*/
+        }
+        else
         {
             GameObject finaleTotaleButton = GameObject.Find("Finale Totale");
             finaleTotaleButton.SetActive(false);
         }
-        
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
