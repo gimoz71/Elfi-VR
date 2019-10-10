@@ -150,12 +150,15 @@ public class SetSceneOnStart : MonoBehaviour
 
 
 
-            /*GameObject timerPanel = GameObject.Find("Timer Panel");
+            GameObject timerPanel = GameObject.Find("Timer Panel");
             timerPanel.SetActive(false);
 
             GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(false);*/
+            countDownMainArea.SetActive(false);
 
+
+            GameObject questionPanel = GameObject.Find("Question Panel");
+            questionPanel.SetActive(true);
 
             GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
             questionTimePanel.SetActive(true);
@@ -166,6 +169,9 @@ public class SetSceneOnStart : MonoBehaviour
 
             GameObject timerPanel = GameObject.Find("Timer Panel");
             timerPanel.SetActive(true);
+
+            GameObject questionPanel = GameObject.Find("Question Panel");
+            questionPanel.SetActive(false);
 
             GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
             questionTimePanel.SetActive(false);
@@ -228,22 +234,34 @@ public class SetSceneOnStart : MonoBehaviour
             }
 
 
+            
+
             GameObject finaleTotaleButton = GameObject.Find("Finale Totale");
             finaleTotaleButton.SetActive(true);
 
-            /*GameObject timerPanel = GameObject.Find("Timer Panel");
-            timerPanel.SetActive(true);*/
-
-            /*GameObject countDownMainArea = GameObject.Find("Countdown");
-            countDownMainArea.SetActive(true);*/
+            GameObject FinaleTimePanel = GameObject.Find("Finale Timer Panel");
+            FinaleTimePanel.SetActive(true);
 
 
+            GameObject timerPanel = GameObject.Find("Timer Panel");
+            timerPanel.SetActive(false);
 
-            /*GameObject questionTimePanel = GameObject.Find("Question Timer Panel");
-            questionTimePanel.SetActive(false);*/
+            
+
+            GameObject countDownMainArea = GameObject.Find("Countdown");
+            countDownMainArea.SetActive(false);
+
+
+
+
         }
         else
         {
+            
+
+            GameObject FinaleTimePanel = GameObject.Find("Finale Timer Panel");
+            FinaleTimePanel.SetActive(false);
+
             GameObject finaleTotaleButton = GameObject.Find("Finale Totale");
             finaleTotaleButton.SetActive(false);
         }
