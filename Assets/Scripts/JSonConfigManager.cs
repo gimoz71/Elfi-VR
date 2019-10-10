@@ -72,7 +72,24 @@ public class JSonConfigManager
         return combinazione;
     }
 
-   public string getDomandaFinale()
+
+    public string getTempoTimer()
+    {
+        var tempo = "";
+
+        try
+        {
+            tempo = model.secondiTimer;
+        }
+        catch (Exception e)
+        {
+            var errore = e;
+        }
+
+        return tempo;
+    }
+
+    public string getDomandaFinale()
     {
         var domandaFinale = "";
 

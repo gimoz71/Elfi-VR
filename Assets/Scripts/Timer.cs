@@ -12,8 +12,8 @@ public class Timer : MonoBehaviour
     public Text countDownUI;
     public TextMeshProUGUI message;
     Coroutine startRitardoLancio;
-    public Text tempoInput;
-    public int tempo = 180;
+    public InputField tempoInput;
+    public int tempo;
 
 
     private float duration;
@@ -32,8 +32,23 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
-        //tempo = 180;
+        var configManager = JSonConfigManager.Instance;
+
+
+        if (SceneChanger.team == 1)
+        {
+            configManager.OpenConfigFile(JSonConfigManager.ConfigFilePathA);
+        }
+        if (SceneChanger.team == 2)
+        {
+            configManager.OpenConfigFile(JSonConfigManager.ConfigFilePathB);
+        }
+
+        
+        tempoInput.text = configManager.getTempoTimer();
+        Debug.Log("TIMER: "+configManager.getTempoTimer());
+
+        tempo = int.Parse((tempoInput.text == "" ? "10" : tempoInput.text));
 
         isPaused = true;
         if (startStopText)
@@ -93,8 +108,8 @@ public class Timer : MonoBehaviour
         }
             
     }
-
-
+    
+    
     // Stoppo il Timer
 
     public void StopTimer()
@@ -146,7 +161,7 @@ public class Timer : MonoBehaviour
             message.text = "Tempo Scaduto";
         }
 
-        fade.enable();
+        fade.enableAuto();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

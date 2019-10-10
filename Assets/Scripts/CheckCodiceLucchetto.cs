@@ -41,6 +41,7 @@ public class CheckCodiceLucchetto : MonoBehaviour
         codice = configManager.getCombinazioneLucchetto();
         treasureAnimation = treasure.GetComponent<Animation>();
         //codice = "12345";
+        Debug.Log("Codice: " + configManager.getCombinazioneLucchetto());
     }
 
     // Update is called once per frame
