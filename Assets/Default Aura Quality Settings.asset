@@ -15,7 +15,7 @@ MonoBehaviour:
   displayVolumetricLightingBuffer: 0
   frustumGridResolution: {x: 160, y: 96, z: 160}
   enableAutomaticStereoResizing: 0
-  farClipPlaneDistance: 33.39
+  farClipPlaneDistance: 30
   depthBiasCoefficient: 0.5
   enableVolumes: 1
   enableVolumesTexture2DMask: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
   enableDenoisingFilter: 0
   denoisingFilterRange: 0
   enableTemporalReprojection: 1
-  temporalReprojectionFactor: 0.872
+  temporalReprojectionFactor: 0.9
   enableOcclusionCulling: 0
   occlusionCullingAccuracy: 4
   enableLightProbes: 0
