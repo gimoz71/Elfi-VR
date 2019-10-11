@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swash : MonoBehaviour
+public class Swash : MonoBehaviour
 {
     public AudioSource swoshAudio;
     public ParticleSystem splash;

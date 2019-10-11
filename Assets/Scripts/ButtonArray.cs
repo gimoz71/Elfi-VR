@@ -11,6 +11,7 @@ public class ButtonArray : MonoBehaviour
     public GameObject AnswerParent;
     public GameObject buttonPrefab;
     public TextMeshProUGUI question;
+    public Text questionIndex;
 
     public ParticleSystem rightParticle;
     public ParticleSystem wrongParticle;
@@ -26,10 +27,13 @@ public class ButtonArray : MonoBehaviour
     public int indiceDomanda = 0;
     public int numeroRisposte = 0;
 
+    public int indiceDomandaTesto;
+
     public int credit;
 
     private void Start()
     {
+        Debug.Log("START!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         var configManager = JSonConfigManager.Instance;
         if (SceneChanger.team == 1)
         {
@@ -46,6 +50,14 @@ public class ButtonArray : MonoBehaviour
         wrongParticle.GetComponent<ParticleSystem>().Stop();
 
         answerConfirm = GetComponent<AudioSource>();
+
+        
+
+        indiceDomanda = PlayerPrefs.GetInt("Domanda");
+
+        indiceDomandaTesto = indiceDomanda + 1;
+
+        questionIndex.text = "Domanda: " + indiceDomandaTesto;
     }
     
     private void popolaDomanda(Domanda domanda) {
@@ -64,7 +76,14 @@ public class ButtonArray : MonoBehaviour
         }
 
         numeroRisposte = answerNumber;
+
+        PlayerPrefs.SetInt("Domanda", indiceDomanda);
+
+        indiceDomandaTesto = indiceDomanda + 1;
+        questionIndex.text = "Domanda: " + indiceDomandaTesto;
         indiceDomanda++;
+       
+
     }
 
     private void resetAnswers() {
@@ -142,5 +161,15 @@ public class ButtonArray : MonoBehaviour
         }
 
         return rispostaId;
+    }
+
+    public void resetQuestion()
+    {
+
+        PlayerPrefs.SetInt("Domanda", 0);
+        indiceDomanda = PlayerPrefs.GetInt("Domanda");
+        indiceDomandaTesto = indiceDomanda + 1;
+        questionIndex.text = "Domanda: " + indiceDomandaTesto;
+
     }
 }

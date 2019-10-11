@@ -9,6 +9,7 @@ namespace models {
     {
         public List<Domanda> domande;
         public string lucchetto;
+        public string secondiTimer;
         public List<string> setDomandeSessione;
         public string domandaFinale;
     }

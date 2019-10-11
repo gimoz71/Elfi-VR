@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.SceneManagement;
 using Aura2API;
 
 public class FinalFade : MonoBehaviour
@@ -14,11 +16,12 @@ public class FinalFade : MonoBehaviour
     public float changePerSecond = 0.1f;
     public bool triggerEnd = false;
 
-    public AudioSource audioFlash;
+    public float finalDelay = 4.0f;
 
+    public AudioSource audioFlash;
     public AudioClip clipFlash;
 
-
+    private IEnumerator coroutine;
 
     // Update is called once per frame
     void Update()
@@ -38,5 +41,26 @@ public class FinalFade : MonoBehaviour
         audioFlash.PlayOneShot(clipFlash, 1f);
     }
 
- 
+
+    public void enableAuto()
+    {
+        coroutine = WaitAndPrint(finalDelay);
+        StartCoroutine(coroutine);
+    }
+
+
+    private IEnumerator WaitAndPrint(float waitTime)
+    {
+        while (true)
+        {
+            triggerEnd = true;
+            audioFlash.PlayOneShot(clipFlash, 1f);
+            yield return new WaitForSeconds(waitTime);
+            print("WaitAndPrint " + Time.time);
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+
 }

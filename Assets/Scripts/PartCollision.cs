@@ -44,7 +44,7 @@ public class PartCollision : MonoBehaviour
             if (other == player)
             {
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                fade.enable();
+                fade.enableAuto();
                 Debug.Log("COLLISION!!!");
             } else if (other == sword)
             {

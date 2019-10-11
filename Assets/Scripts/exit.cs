@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class exit : MonoBehaviour
+public class Exit : MonoBehaviour
 {
     public void ExitButton()
     {
