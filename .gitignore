@@ -64,3 +64,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 
+Assets/Plugins/x86/audioplugin_phonon.dll.meta
+Assets/Plugins/x86/phonon.dll.meta
+Assets/Plugins/x86_64/audioplugin_phonon.dll.meta
+Assets/Plugins/x86_64/phonon.dll.meta

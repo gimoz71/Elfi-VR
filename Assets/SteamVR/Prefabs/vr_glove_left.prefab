@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonAction: {fileID: 11400000, guid: 56df25ff935e9d34aba684b96a7e54e6, type: 2}
   inputSource: 1
-  rangeOfMotion: 0
+  rangeOfMotion: 1
   skeletonRoot: {fileID: 4000012684619030}
   origin: {fileID: 0}
   updatePose: 1
